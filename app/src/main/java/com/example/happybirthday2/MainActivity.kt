@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
+
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -33,8 +33,8 @@ class MainActivity : ComponentActivity() {
             HappyBirthday2Theme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color =MaterialTheme.colorScheme.background,
-                ) {
+                    color =MaterialTheme.colorScheme.background,)
+                {
                     GreetingImage(
                         message ="Happy Birthday Sam",
                         from = "Malick",
@@ -50,8 +50,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingText(message: String,from : String, modifier: Modifier = Modifier) {
     Column (
-            verticalArrangement = Arrangement.Center,
-            modifier = modifier.padding(8.dp)
+        verticalArrangement = Arrangement.Center,
+            modifier = modifier.padding(8.dp),
+
     ){
 
 
@@ -63,19 +64,21 @@ fun GreetingText(message: String,from : String, modifier: Modifier = Modifier) {
             modifier = modifier
         )
         Text(
-            text = from, fontSize = 50.sp,
+            text = from,
+            fontSize = 36.sp,
             modifier = Modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.End),
+                .align(alignment = Alignment.CenterHorizontally),
+
         )
     }
 }
 
 @Composable
-fun GreetingImage(message: String,from : String, modifier: Modifier = Modifier) {
+fun GreetingImage(message: String,from : String) {
     val image = painterResource(R.drawable.androidparty__1_)
 
-        Box {
+        Box ( contentAlignment = Alignment.Center) {
             Image(
                 painter = image,
                 contentScale = ContentScale.Crop,
@@ -87,14 +90,12 @@ fun GreetingImage(message: String,from : String, modifier: Modifier = Modifier) 
             message = message,
             from = from,
             modifier = Modifier
-                .padding(8.dp)
+                .padding(8.dp),
+
 
         )
         }
     }
-
-   
-
 
 @Preview(showBackground = true)
 @Composable
