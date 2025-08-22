@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                 {
                     GreetingImage(
                         message ="Happy Birthday Sam",
-                        from = "Malick",
+                        from = "Emma",
 
                     )
 
@@ -101,6 +101,6 @@ fun GreetingImage(message: String,from : String) {
 @Composable
 fun GreetingPreview() {
     HappyBirthday2Theme {
-        GreetingImage("Happy Birthday Sam", "from Malick")
+        GreetingImage("Happy Birthday Sam", "from Emma")
     }
 }
